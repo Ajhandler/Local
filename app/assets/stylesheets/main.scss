@@ -1,15 +1,8 @@
 // Bourbon/Neat
 @import "bourbon";
+@import "base/base";
 @import "neat";
 
-//normalize
-@import "base/normalize";
-
-//variables
-@import "base/variables";
-
-//type
-@import "base/type";
 
 //layout
 @import "layout/grid";
