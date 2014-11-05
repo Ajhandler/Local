@@ -35,6 +35,10 @@ ActiveRecord::Schema.define(version: 20141104215007) do
     t.integer  "template_id"
     t.integer  "user_id"
     t.string   "subdomain"
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -2,7 +2,7 @@
 
 
 
-<%= form_for @company do |f| %>
+<%= form_for @company, :html => { :multipart => true } do |f| %>
   
   <% if @company.errors.any? %>
     <ul>
@@ -25,6 +25,11 @@
   <div class="field">
     <%= f.label :tagline %><br />
     <%= f.text_field :tagline%>
+  </div>
+
+  <div class="field">
+    <%= f.label :logo %><br />
+    <%= f.file_field :logo %>
   </div>
 
    <div class="field">
