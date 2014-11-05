@@ -1,8 +1,5 @@
 class Company < ActiveRecord::Base
-<<<<<<< HEAD
-
-=======
->>>>>>> 35949011c470e4876d0e8e91925777960f1e5971
+	
 	belongs_to :user
 	belongs_to :theme
 

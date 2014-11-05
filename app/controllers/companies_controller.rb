@@ -1,7 +1,7 @@
 class CompaniesController < ApplicationController
 
 	before_action :authenticate_user!, only: [:index]
-	before_action :set_company, only: [:destroy]
+	before_action :set_company, only: [:destroy, :show]
 
 	def index
 		@company = current_user.company
