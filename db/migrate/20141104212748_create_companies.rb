@@ -22,6 +22,7 @@ class CreateCompanies < ActiveRecord::Migration
       t.integer :template_id	
       t.integer :user_id
       t.string :subdomain
+      t.attachment :logo
       t.timestamps
     end
   end
