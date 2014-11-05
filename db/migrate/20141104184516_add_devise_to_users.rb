@@ -34,6 +34,7 @@ class AddDeviseToUsers < ActiveRecord::Migration
       t.string :last_name
       t.integer :company_id
       t.integer :phone
+      t.boolean :isadmin
       # Uncomment below if timestamps were not included in your original model.
       t.timestamps
     end

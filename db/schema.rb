@@ -11,7 +11,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141104184516) do
+ActiveRecord::Schema.define(version: 20141104215007) do
+
+  create_table "companies", force: true do |t|
+    t.string   "company"
+    t.string   "tagline"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "zipcode"
+    t.integer  "phone"
+    t.integer  "fax"
+    t.string   "email"
+    t.text     "about"
+    t.string   "hours"
+    t.integer  "year_established"
+    t.string   "facebook"
+    t.string   "twitter"
+    t.string   "tumblr"
+    t.string   "linkedin"
+    t.integer  "package_id"
+    t.integer  "template_id"
+    t.string   "subdomain"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "templates", force: true do |t|
+    t.string   "template_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -32,6 +63,7 @@ ActiveRecord::Schema.define(version: 20141104184516) do
     t.string   "last_name"
     t.integer  "company_id"
     t.integer  "phone"
+    t.boolean  "isadmin"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
