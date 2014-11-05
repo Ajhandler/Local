@@ -19,10 +19,11 @@ class CreateCompanies < ActiveRecord::Migration
       t.string :tumblr
       t.string :linkedin
       t.integer :package_id
-      t.integer :template_id	
+      t.integer :theme_id	
       t.integer :user_id
       t.string :subdomain
       t.attachment :logo
+      t.string :slug
       t.timestamps
     end
   end
