@@ -4,7 +4,7 @@ class CompaniesController < ApplicationController
 	before_action :set_company, only: [:destory]
 
 	def index
-
+		@company = current_user.company
 	end
 
 	def show
