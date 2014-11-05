@@ -8,7 +8,7 @@ class CompaniesController < ApplicationController
 	end
 
 	def show
-		@company = current_user.company
+	
 	end
 
 	def new
