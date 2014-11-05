@@ -17,9 +17,9 @@ class CompaniesController < ApplicationController
 
 	def create
 		@company = Company.new(company_params) 
-		@company.user_id = User.find(session[:user_id])
+		@company.user = User.find(current_user.id)
 		@company.save
-  		redirect_to company_index_path, notice: "New Page Created!"
+  		redirect_to companies_path, notice: "New Page Created!"
 	end
 
 	def update
