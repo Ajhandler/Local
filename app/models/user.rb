@@ -6,4 +6,5 @@ class User < ActiveRecord::Base
 	validates :first_name, presence: true
 	validates :last_name, presence: true
 	validates :phone, phone_number: true
+	belongs_to :company
 end
