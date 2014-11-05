@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 20141104215007) do
     t.string   "last_name"
     t.integer  "company_id"
     t.integer  "phone"
+    t.boolean  "isadmin"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
