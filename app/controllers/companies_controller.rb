@@ -16,8 +16,10 @@ class CompaniesController < ApplicationController
 	end
 
 	def create
-		@company = Company.create(title: "New Page", user_id: current_user.id)
-  		redirect_to company_index_path, notice: "New Page Created!"
+		@company = Company.new(company_params) 
+		@company.user = User.find(current_user.id)
+		@company.save
+  		redirect_to templates_path notice: "New Page Created!"
 	end
 
 	def update
@@ -38,5 +40,9 @@ class CompaniesController < ApplicationController
 
 	def set_company
 			@company = Company.find(params[:id])
+	end
+
+	def company_params
+		params.require(:company).permit( :company, :tagline, :address1, :address2, :city, :state, :zipcode, :phone, :fax, :email, :about, :hours, :years_establisted, :facebook, :twitter, :tumblr, :linkedin, :package_id, :template_id, :user_id, :subdomain)
 	end
 end
