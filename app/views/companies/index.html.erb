@@ -1,3 +1,7 @@
-<h1>Compny Index</h1>
+<h1>Company Index</h1>
+
+<div><%= button_to 'delete', @company, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+
 <h1>hello</h1>
+<%= image_tag @company.logo.url(:medium) %>
 <%= @company.company %>

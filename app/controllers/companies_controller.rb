@@ -1,7 +1,7 @@
 class CompaniesController < ApplicationController
 
 	before_action :authenticate_user!, only: [:index]
-	before_action :set_company, only: [:destory]
+	before_action :set_company, only: [:destroy]
 
 	def index
 		@company = current_user.company
@@ -27,12 +27,13 @@ class CompaniesController < ApplicationController
 	end
 
 	def destroy
+
 		if @company.destroy
 			flash[:notice] = "Site Deleted!"
-			#redirect_to root_path
+			redirect_to root_path
 		else
 			flash[:notice] = "Could not delete. Sorry."
-			#redirect_to root_path
+			redirect_to root_path
 		end
 	end
 
