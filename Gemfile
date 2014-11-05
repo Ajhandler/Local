@@ -29,6 +29,8 @@ gem 'devise', '~> 3.4.1'
 
 gem 'validates_phone_number', '~> 2.0.1'
 
+gem 'paperclip', '~> 4.2.0'
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.1.0'
   gem 'database_cleaner'
