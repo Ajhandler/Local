@@ -3,11 +3,12 @@ class ThemesController < ApplicationController
 	end
 
 	def new
-		@themes = Theme.new
+		@theme = Theme.new
 	end
 	def create
 		@theme = Theme.new(theme_params)
 		@theme.save
+		redirect_to companies_path
 	end
 
 	private

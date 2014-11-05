@@ -19,7 +19,7 @@ class CompaniesController < ApplicationController
 		@company = Company.new(company_params) 
 		@company.user = User.find(current_user.id)
 		@company.save
-  		redirect_to templates_path notice: "New Page Created!"
+  		redirect_to themes_path notice: "New Page Created!"
 	end
 
 	def update
