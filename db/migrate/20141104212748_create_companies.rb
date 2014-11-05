@@ -20,6 +20,7 @@ class CreateCompanies < ActiveRecord::Migration
       t.string :linkedin
       t.integer :package_id
       t.integer :template_id	
+      t.integer :user_id
       t.string :subdomain
       t.timestamps
     end
