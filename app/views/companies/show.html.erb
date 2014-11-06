@@ -1,0 +1,51 @@
+
+<% content_for :head do %>
+  <title><%= @company.company %> in <%= @company.city  %>, <%= @company.state  %></title>
+  <meta name="description" content="<%=h truncate(@company.about, :length => 155) %>">
+<% end %>
+
+
+<div class = "header-<%= @theme %>">
+<div class="company-<%= @theme  %>">
+	<h1><%= @company.company %></h1>
+</div>
+
+<div class="tagline-<%= @theme  %>">
+	<h3><%=@company.tagline  %></h3>
+</div>
+</div>
+<div class="container">
+<div class="info">
+<h2>Find Us</h2>
+<div class="address1-<%= @theme  %>">
+	<%= @company.address1  %>
+</div>
+<div class="city-<%= @theme  %>">
+	<%= @company.city  %>
+</div>
+<div class="state-<%= @theme  %>">
+	<%= @company.state  %>
+</div>
+<div class="zipcode-<%= @theme  %>">
+	<%= @company.zipcode  %>
+</div>
+</div>
+<div class="info">
+<h2>Contact Us</h2>
+<div class="phone-<%= @theme  %>">
+	<%= @company.phone  %>
+</div>
+<div class="fax-<%= @theme  %>">
+	<%= @company.fax  %>
+</div>
+<div class="email-<%= @theme  %>">
+	<%= @company.email  %>
+</div>
+</div>
+<div class="info">
+<h2>Hours</h2>
+<div class="hours-<%= @theme  %>">
+	<%= @company.hours  %>
+</div>
+</div>
+</div>
