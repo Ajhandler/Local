@@ -1,23 +1,59 @@
-<h1>new</h1>
 
-<div>
-<h3>Sunset</h3>
-<%= form_for @theme do |f|  %>
-	 <input type="hidden" id="theme_theme_name" name="theme[theme_name]" value="sunset">
-	<%= f.submit  %>
-<% end %>
+<div class="section-header">
+	<h1>Select a theme for your website</h1>
 </div>
-<div>
-<h3>theme2</h3>
-<%= form_for @theme do |f|  %>
-	 <input type="hidden" id="theme_theme_name" name="theme[theme_name]" value="theme2">
-	<%= f.submit  %>
-<% end %>
+<div class="container">
+<div class="cards">
+	<div class="card">
+		<div class="card-image">
+			<img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png" alt="">
+		</div>
+		<div class="card-header">
+			Resturant
+		</div>
+		<div class="card-copy">
+			<p>A theme based around good food.</p>
+		</div>
+		<div class="card-stats">
+			<%= form_for @theme do |f|  %>
+			<input type="hidden" id="theme_theme_name" name="theme[theme_name]" value="Resturant">
+			<%= f.submit  %>
+			<% end %>
+		</div>
+	</div>
+	<div class="card">
+		<div class="card-image">
+			<img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains-4.png" alt="">
+		</div>
+		<div class="card-header">
+			Nuve
+		</div>
+		<div class="card-copy">
+			<p>A modern theme for a modern buisness</p>
+		</div>
+		<div class="card-stats">
+			<%= form_for @theme do |f|  %>
+			<input type="hidden" id="theme_theme_name" name="theme[theme_name]" value="Nuve">
+			<%= f.submit  %>
+			<% end %>
+		</div>
+	</div>
+	<div class="card">
+		<div class="card-image">
+			<img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains-3.png" alt="">
+		</div>
+		<div class="card-header">
+			Milano
+		</div>
+		<div class="card-copy">
+			<p>Just like the cookie, this theme is delicious</p>
+		</div>
+		<div class="card-stats">
+			<%= form_for @theme do |f|  %>
+			<input type="hidden" id="theme_theme_name" name="theme[theme_name]" value="Milano">
+			<%= f.submit  %>
+			<% end %>
+		</div>
+	</div>
 </div>
-<div>
-<h3>theme3</h3>
-<%= form_for @theme do |f|  %>
-	  <input type="hidden" id="theme_theme_name" name="theme[theme_name]" value="theme3">
-	<%= f.submit  %>
-<% end %>
 </div>
