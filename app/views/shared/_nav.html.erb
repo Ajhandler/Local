@@ -1,0 +1,17 @@
+<nav>
+    <%= link_to "Home", root_path, class: :button %> |
+	<% if current_user %>
+		<%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: :button %>  |
+		<% if companies_path %>
+            <%= link_to "See My Site", company_path(@company), class: :button %>
+            <%= button_to 'Delete', @company, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+        <% end %>
+        <% if company_path %>
+            <%= link_to "Edit My Site", companies_path, class: :button %>
+        <% end %>
+    <% else %>
+		<%= link_to "Sign In", new_user_session_path, class: :button %> |
+		<%= link_to "Sign Up", new_user_registration_path, class: :button %>
+	<% end %>
+</nav>
+

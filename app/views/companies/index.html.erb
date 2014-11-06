@@ -1,9 +1,13 @@
 <h1>Company Index</h1>
 
-<div><%= button_to 'delete', @company, method: :delete, data: { confirm: 'Are you sure?' } %></div>
-
 <h1>Edit your site here!</h1>
 <%= image_tag @company.logo.url(:medium) %>
+<%= form_for @company, :html => { :multipart => true } do |f| %>
+<div class="field">
+    <%= f.label 'Edit your logo' %><br />
+    <%= f.file_field :logo %>
+</div>
+<% end %>
 
 <div class="company">
 	<h6>Company: </h6><%= best_in_place @company, :company, type: :input %>
@@ -11,6 +15,10 @@
 
 <div class="tagline">
 	<h6>Tagline: </h6><%= best_in_place @company, :tagline, type: :input %>
+</div>
+
+<div class="about">
+	<h6>About us: </h6><%= best_in_place @company, :about, type: :textarea, :sanitize => :false%>
 </div>
 
 <div class="address1">
