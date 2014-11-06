@@ -1,13 +1,19 @@
-<h1>Company Show</h1>
 
+
+
+
+<div class = "header-<%= @theme %>">
 <div class="company-<%= @theme  %>">
-	<%= @company.company %>
+	<h1><%= @company.company %></h1>
 </div>
 
 <div class="tagline-<%= @theme  %>">
-	<%=@company.tagline  %>
+	<h3><%=@company.tagline  %></h3>
 </div>
-
+</div>
+<div class="container">
+<div class="info">
+<h2>Find Us</h2>
 <div class="address1-<%= @theme  %>">
 	<%= @company.address1  %>
 </div>
@@ -20,6 +26,9 @@
 <div class="zipcode-<%= @theme  %>">
 	<%= @company.zipcode  %>
 </div>
+</div>
+<div class="info">
+<h2>Contact Us</h2>
 <div class="phone-<%= @theme  %>">
 	<%= @company.phone  %>
 </div>
@@ -29,6 +38,11 @@
 <div class="email-<%= @theme  %>">
 	<%= @company.email  %>
 </div>
+</div>
+<div class="info">
+<h2>Hours</h2>
 <div class="hours-<%= @theme  %>">
 	<%= @company.hours  %>
+</div>
+</div>
 </div>
