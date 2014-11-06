@@ -2,6 +2,7 @@ class CompaniesController < ApplicationController
 
 	before_action :authenticate_user!, only: [:index]
 	before_action :set_company, only: [:destroy, :show]
+	# before_action :set_slug, only: [:destroy, :show]
 
 	def index
 		@company = current_user.company
@@ -40,9 +41,10 @@ class CompaniesController < ApplicationController
 	private
 
 	def set_company
-			@company = Company.find(params[:id])
-	end
+			@company = Company.find_by_subdomain(params[:id])
 
+	end
+	
 	def company_params
 		params.require(:company).permit( :company, :tagline, :address1, :address2, :city, :state, :zipcode, :phone, :fax, :email, :about, :hours, :years_establisted, :facebook, :twitter, :tumblr, :linkedin, :package_id, :template_id, :user_id, :subdomain, :logo)
 	end
