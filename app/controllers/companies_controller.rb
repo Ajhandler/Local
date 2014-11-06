@@ -1,14 +1,13 @@
 class CompaniesController < ApplicationController
-
 	before_action :authenticate_user!, only: [:index]
-	before_action :set_company, only: [:destroy]
+	before_action :set_company, only: [:destroy, :show, :update]
 
 	def index
 		@company = current_user.company
 	end
 
 	def show
-
+	
 	end
 
 	def new
@@ -19,21 +18,31 @@ class CompaniesController < ApplicationController
 		@company = Company.new(company_params) 
 		@company.user = User.find(current_user.id)
 		@company.save
-  		redirect_to themes_path notice: "New Page Created!"
+  		redirect_to new_theme_path notice: "New Page Created!"
 	end
 
 	def update
-		
+		if @company.update(company_params)
+	  		respond_to do |format|
+	  			format.html { redirect_to @company.project, notice: 'Site successfully updated.' }
+	      		format.json { respond_with_bip(@company) }
+	  		end
+	  	else
+	  		respond_to do |format|
+	  			format.html { redirect_to @company.project, notice: 'Something went wrong.' }
+	      		format.json { respond_with_bip(@company) }
+	  		end
+	  	end
 	end
 
 	def destroy
 
 		if @company.destroy
 			flash[:notice] = "Site Deleted!"
-			redirect_to root_path
+			redirect_to "/users/:id"
 		else
 			flash[:notice] = "Could not delete. Sorry."
-			redirect_to root_path
+			redirect_to "/users/:id"
 		end
 	end
 
