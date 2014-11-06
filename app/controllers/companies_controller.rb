@@ -7,7 +7,7 @@ class CompaniesController < ApplicationController
 	end
 
 	def show
-	
+	@theme = @company.theme.theme_name
 	end
 
 	def new
@@ -53,6 +53,6 @@ class CompaniesController < ApplicationController
 	end
 
 	def company_params
-		params.require(:company).permit( :company, :tagline, :address1, :address2, :city, :state, :zipcode, :phone, :fax, :email, :about, :hours, :years_establisted, :facebook, :twitter, :tumblr, :linkedin, :package_id, :template_id, :user_id, :subdomain, :logo)
+		params.require(:company).permit( :company, :tagline, :address1, :address2, :city, :state, :zipcode, :phone, :fax, :email, :about, :hours, :year_established, :facebook, :twitter, :tumblr, :linkedin, :package_id, :template_id, :user_id, :subdomain, :logo)
 	end
 end
