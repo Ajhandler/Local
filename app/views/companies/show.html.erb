@@ -1,20 +1,20 @@
 
-<<<<<<< HEAD
+<% content_for :head do %>
+  <title><%= @company.company %> in <%= @company.city  %>, <%= @company.state  %></title>
+  <meta name="description" content="<%=h truncate(@company.about, :length => 155) %>">
+ <% end %>
+
 <div class="company">
 	<h6>Company: </h6><%= @company.company %>
 </div>
 
-<div class="tagline"
+<div class="tagline">
 	<h6>Tagline: </h6><%= @company.tagline %>
 </div>
 
 <div class="about">
 	<h6>About us: </h6><%= @company.about %>
-=======
-<% content_for :head do %>
-  <title><%= @company.company %> in <%= @company.city  %>, <%= @company.state  %></title>
-  <meta name="description" content="<%=h truncate(@company.about, :length => 155) %>">
-<% end %>
+</div>
 
 
 <div class = "header-<%= @theme %>">
@@ -26,12 +26,12 @@
 	<h3><%=@company.tagline  %></h3>
 </div>
 </div>
+
 <div class="container">
 <div class="info">
 <h2>Find Us</h2>
 <div class="address1-<%= @theme  %>">
 	<%= @company.address1  %>
->>>>>>> 05892efaa6473b5316be213a4f10e3922f00d82f
 </div>
 
 <div class="address1">
@@ -46,16 +46,13 @@
 <div class="state">
 	<h6>State: </h6><%= @company.state %>
 </div>
-<<<<<<< HEAD
 <div class="zipcode">
 	<h6>Zipcode: </h6><%= @company.zipcode %>
-=======
 </div>
 <div class="info">
 <h2>Contact Us</h2>
 <div class="phone-<%= @theme  %>">
 	<%= @company.phone  %>
->>>>>>> 05892efaa6473b5316be213a4f10e3922f00d82f
 </div>
 <div class="phone">
 	<h6>Phone: </h6><%= @company.phone %>
@@ -63,14 +60,12 @@
 <div class="fax">
 	<h6>Fax: </h6><%= @company.fax %>
 </div>
-<<<<<<< HEAD
 <div class="email">
 	<h6>Email: </h6><%= @company.email %>
 </div>
 <div class="hours">
 	<h6>Hours: </h6><%= @company.hours %>
 </div>
-=======
 </div>
 <div class="info">
 <h2>Hours</h2>
@@ -79,4 +74,5 @@
 </div>
 </div>
 </div>
->>>>>>> 05892efaa6473b5316be213a4f10e3922f00d82f
+</div>
+
