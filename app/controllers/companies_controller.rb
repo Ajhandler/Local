@@ -1,15 +1,14 @@
 class CompaniesController < ApplicationController
-
 	before_action :authenticate_user!, only: [:index]
-	before_action :set_company, only: [:destroy, :show]
-	# before_action :set_slug, only: [:destroy, :show]
+
+	before_action :set_company, only: [:destroy, :show, :update]
 
 	def index
 		@company = current_user.company
 	end
 
 	def show
-	
+	@theme = @company.theme.theme_name
 	end
 
 	def new
@@ -24,17 +23,27 @@ class CompaniesController < ApplicationController
 	end
 
 	def update
-		
+		if @company.update(company_params)
+	  		respond_to do |format|
+	  			format.html { redirect_to @company.project, notice: 'Site successfully updated.' }
+	      		format.json { respond_with_bip(@company) }
+	  		end
+	  	else
+	  		respond_to do |format|
+	  			format.html { redirect_to @company.project, notice: 'Something went wrong.' }
+	      		format.json { respond_with_bip(@company) }
+	  		end
+	  	end
 	end
 
 	def destroy
 
 		if @company.destroy
 			flash[:notice] = "Site Deleted!"
-			redirect_to root_path
+			redirect_to "/users/:id"
 		else
 			flash[:notice] = "Could not delete. Sorry."
-			redirect_to root_path
+			redirect_to "/users/:id"
 		end
 	end
 
@@ -46,6 +55,6 @@ class CompaniesController < ApplicationController
 	end
 	
 	def company_params
-		params.require(:company).permit( :company, :tagline, :address1, :address2, :city, :state, :zipcode, :phone, :fax, :email, :about, :hours, :years_establisted, :facebook, :twitter, :tumblr, :linkedin, :package_id, :template_id, :user_id, :subdomain, :logo)
+		params.require(:company).permit( :company, :tagline, :address1, :address2, :city, :state, :zipcode, :phone, :fax, :email, :about, :hours, :year_established, :facebook, :twitter, :tumblr, :linkedin, :package_id, :template_id, :user_id, :subdomain, :logo)
 	end
 end

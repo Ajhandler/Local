@@ -31,7 +31,13 @@ gem 'validates_phone_number', '~> 2.0.1'
 
 gem 'paperclip', '~> 4.2.0'
 
+
 gem 'slugged', '~> 2.0'
+
+gem 'best_in_place', '~> 3.0.0'
+
+gem 'jquery-ui-rails'
+
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.1.0'
