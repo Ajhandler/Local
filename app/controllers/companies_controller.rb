@@ -1,7 +1,6 @@
 class CompaniesController < ApplicationController
-
 	before_action :authenticate_user!, only: [:index]
-	before_action :set_company, only: [:destroy, :show]
+	before_action :set_company, only: [:destroy, :show, :update]
 
 	def index
 		@company = current_user.company
@@ -23,17 +22,27 @@ class CompaniesController < ApplicationController
 	end
 
 	def update
-		
+		if @company.update(company_params)
+	  		respond_to do |format|
+	  			format.html { redirect_to @company.project, notice: 'Site successfully updated.' }
+	      		format.json { respond_with_bip(@company) }
+	  		end
+	  	else
+	  		respond_to do |format|
+	  			format.html { redirect_to @company.project, notice: 'Something went wrong.' }
+	      		format.json { respond_with_bip(@company) }
+	  		end
+	  	end
 	end
 
 	def destroy
 
 		if @company.destroy
 			flash[:notice] = "Site Deleted!"
-			redirect_to root_path
+			redirect_to "/users/:id"
 		else
 			flash[:notice] = "Could not delete. Sorry."
-			redirect_to root_path
+			redirect_to "/users/:id"
 		end
 	end
 

@@ -6,6 +6,6 @@ end
   resources :companies
   resources :themes 
   root 'home#index'
-  #get 'users#index'
+  get '/users/:id' => 'users#index'
   
 end

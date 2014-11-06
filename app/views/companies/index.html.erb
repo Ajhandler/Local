@@ -2,6 +2,41 @@
 
 <div><%= button_to 'delete', @company, method: :delete, data: { confirm: 'Are you sure?' } %></div>
 
-<h1>hello</h1>
+<h1>Edit your site here!</h1>
 <%= image_tag @company.logo.url(:medium) %>
-<%= @company.company %>
+
+<div class="company">
+	<h6>Company: </h6><%= best_in_place @company, :company, type: :input %>
+</div>
+
+<div class="tagline">
+	<h6>Tagline: </h6><%= best_in_place @company, :tagline, type: :input %>
+</div>
+
+<div class="address1">
+	<h6>Address 1: </h6><%= best_in_place @company, :address1, type: :input %>
+</div>
+<div class="address1">
+	<h6>Address 2: </h6><%= best_in_place @company, :address2, type: :input %>
+</div>
+<div class="city">
+	<h6>City: </h6><%= best_in_place @company, :city, type: :input %>
+</div>
+<div class="state">
+	<h6>State: </h6><%= best_in_place @company, :state, type: :input %>
+</div>
+<div class="zipcode">
+	<h6>Zipcode: </h6><%= best_in_place @company, :zipcode, type: :input %>
+</div>
+<div class="phone">
+	<h6>Phone: </h6><%= best_in_place @company, :phone, type: :input  %>
+</div>
+<div class="fax">
+	<h6>Fax: </h6><%= best_in_place @company, :fax, type: :input  %>
+</div>
+<div class="email">
+	<h6>Email: </h6><%= best_in_place @company, :email, type: :input %>
+</div>
+<div class="hours">
+	<h6>Hours: </h6><%= best_in_place @company, :hours, type: :input %>
+</div>
