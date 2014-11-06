@@ -8,7 +8,7 @@ class CompaniesController < ApplicationController
 	end
 
 	def show
-	
+	@theme = @company.theme.theme_name
 	end
 
 	def new
