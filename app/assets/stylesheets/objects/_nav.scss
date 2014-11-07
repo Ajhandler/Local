@@ -266,7 +266,7 @@ header.navigation {
     }
   }
 
-  a.sign_up, a.sign_out, a.sign_in {
+  a.sign_up, a.sign_out, a.sign_in, a.delete {
     margin-left: .5em;
     margin-top: 1.2em;
     float: right;
@@ -302,6 +302,15 @@ a.sign_out{
 
     &:hover{
       background: darken(#edede8, 10);
+    }
+  }
+
+   a.delete{
+  
+    background: darken(#D36C5F, 20);
+
+    &:hover{
+      background: darken(#edede8, 40);
     }
   }
 // Search bar
