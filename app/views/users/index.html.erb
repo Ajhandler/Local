@@ -1,1 +1,13 @@
-<h1>User Home - Site Deleted</h1>
+<div class="">
+<h1>Hi, <%= current_user.first_name %> welcome to your user page</h1>
+<p>From here you have a couple of options. Make a choice below</p>
+<div class="">
+<ul>
+	<li><%= link_to('Edit registration', edit_user_registration_path(@user),class: :button) %>
+	<%= link_to "Edit My Site", companies_path, class: :button %></li>
+	<li></li>
+	<li></li>
+</ul>
+</div>
+
+</div>
