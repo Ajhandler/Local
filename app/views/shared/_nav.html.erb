@@ -2,7 +2,7 @@
 <header class="navigation">
   <div class="navigation-wrapper">
     <a href="javascript:void(0)" class="logo">
-      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" alt="Logo Image">
+      <i class="fa fa-code fa-2x"></i>
     </a>
     <a href="" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
     <div class="nav">
@@ -15,11 +15,10 @@
      <% if current_user %>
      <%= link_to "Sign Out", destroy_user_session_path, class: :sign_out, method: :delete %>
         <% if current_page? companies_path %>
-       <%= link_to "See My Site", company_path(current_user.company.subdomain), class: :sign_up%>
         <% else %>
             <%= link_to "Edit My Site", companies_path, class: :sign_up %>
         <% end %>
-        <%= link_to "Delete", @company, class: :delete, method: :delete, data: {confirm: 'Are you sure?'} %>
+        <%= link_to "Delete", @company, class: :sign_out, method: :delete, data: {confirm: 'Are you sure?'} %>
     <% else %>
         <%= link_to "Sign In", new_user_session_path, class: :sign_in %> 
         <%= link_to "Sign Up", new_user_registration_path, class: :sign_up %>

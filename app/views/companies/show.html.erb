@@ -1,4 +1,6 @@
 
+
+<% if current_user.company.theme.theme_name == "Resturant" %>
 <% content_for :head do %>
   <title><%= @company.company %> in <%= @company.city  %>, <%= @company.state  %></title>
   <meta name="description" content="<%=h truncate(@company.about, :length => 155) %>">
@@ -55,4 +57,56 @@
 </div>
 </div>
 </div>
+<% end %>
 
+<% if current_user.company.theme.theme_name == "Milano" %>
+<div class="container">
+<div class = "header-<%= @theme %>">
+<div class="company-<%= @theme  %>">
+	<h1><%= @company.company %></h1>
+</div>
+
+<div class="tagline-<%= @theme  %>">
+	<h3><%=@company.tagline  %></h3>
+</div>
+</div>
+<div class="grid-items">
+  <a href="javascript:void(0)" class="grid-item">
+    <i class="fa fa-phone-square fa-3x"></i>
+   <h1>Contact Us</h1>
+    <p><%=@company.phone%></p>
+     <p><%=@company.fax%></p>
+     <p><%=@company.email%></p>
+  </a>
+  <a href="javascript:void(0)" class="grid-item grid-item-big grid-item-image">
+ <i class="fa fa-heart fa-3x"></i>
+  <h1>About Us</h1>
+    <p><%=@company.about%></p>
+  </a>
+  <a href="javascript:void(0)" class="grid-item grid-item-big">
+  <i class="fa fa-map-marker fa-3x"></i>
+    <h1>Find Us</h1>
+    <p><%=@company.address1%></p>
+     <p><%=@company.address2%></p>
+     <p><%=@company.city%>, <%=@company.state%></p>
+      <p><%=@company.zipcode%></p>
+  </a>
+  <a href="javascript:void(0)" class="grid-item">
+    <i class="fa fa-clock-o fa-3x"></i>
+    <h1>Our Hours</h1>
+    <p><%= @company.hours %></p>
+  </a>
+  <a href="javascript:void(0)" class="grid-item">
+   <i class="fa fa-user fa-3x"></i>
+    <h1>Social</h1>
+    <p href="<%= @company.facebook  %>" title="">Facebook</p>
+    <p href="<%= @company.twitter  %>" title="">Twitter</p>
+     <p href="<%= @company.linkedin  %>" title="">Linkedin</p>
+      <p href="<%= @company.tumblr  %>" title="">Tumblr</p>
+  </a>
+  <a href="javascript:void(0)" class="grid-item grid-item-big grid-item-image">
+   <iframe width="600" height="150" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=<%= @company.address1 %> <%= @company.city %> <%= @company.state %> <%= @company.zipcode %>&output=embed"></iframe>
+  </a>
+</div>
+</div>
+<% end %>
