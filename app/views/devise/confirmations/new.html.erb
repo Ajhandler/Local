@@ -1,4 +1,11 @@
-<h2>Resend confirmation instructions</h2>
+<div class="container">
+  <div class="hero formhero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <h2>Resend confirmation instructions</h2>
+      </div>
+    </div>
+  </div>
 
 <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
   <%= devise_error_messages! %>
@@ -16,7 +23,6 @@
 	  <% end %>
 	  </div>
 	</div>
-	
+</div>
 
-
-<%= render "devise/shared/links" %>
+<div align="center"><%= render "devise/shared/links" %></div>

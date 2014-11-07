@@ -1,0 +1,30 @@
+<div class="container" align="center">
+	<h1>Hi, <%= current_user.first_name %>! Welcome To Your User Page.</h1>
+	<p>From here you have a couple of options. Make a choice below</p>
+	<div class="cards">
+		<div class="card" align="center">
+			<div class="card-image">
+				<img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png" alt="">
+			</div>
+			<div class="card-header" >
+				<%= link_to 'Edit User', edit_user_registration_path(@user) %>
+			</div>
+		</div>
+		<div class="card" align="center">
+			<div class="card-image">
+				<img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png" alt="">
+			</div>
+			<div class="card-header">
+				<%= link_to 'View My Site', company_path(current_user.company.subdomain) %>
+			</div>
+		</div>
+		<div class="card" align="center">
+			<div class="card-image">
+				<img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png" alt="">
+			</div>
+			<div class="card-header">
+				<%= link_to "Create New Site", new_company_path %>
+			</div>
+		</div>
+	</div>
+</div>
