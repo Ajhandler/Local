@@ -5,6 +5,7 @@ class CompaniesController < ApplicationController
 
 	def index
 		@company = current_user.company
+		@theme = @company.theme.theme_name
 	end
 
 	def show

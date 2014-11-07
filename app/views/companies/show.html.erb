@@ -1,22 +1,10 @@
 
+
+<% if current_user.company.theme.theme_name == "Resturant" %>
 <% content_for :head do %>
   <title><%= @company.company %> in <%= @company.city  %>, <%= @company.state  %></title>
   <meta name="description" content="<%=h truncate(@company.about, :length => 155) %>">
  <% end %>
-
-<div class="company">
-	<h6>Company: </h6><%= @company.company %>
-</div>
-
-<div class="tagline">
-	<h6>Tagline: </h6><%= @company.tagline %>
-</div>
-
-<div class="about">
-	<h6>About us: </h6><%= @company.about %>
-</div>
-
-
 <div class = "header-<%= @theme %>">
 <div class="company-<%= @theme  %>">
 	<h1><%= @company.company %></h1>
@@ -28,51 +16,97 @@
 </div>
 
 <div class="container">
-<div class="info">
+<div class="info-<%= @theme  %>">
 <h2>Find Us</h2>
 <div class="address1-<%= @theme  %>">
 	<%= @company.address1  %>
 </div>
 
 <div class="address1">
-	<h6>Address 1: </h6><%= @company.address1 %>
-</div>
-<div class="address1">
 	<h6>Address 2: </h6><%= @company.address2 %>
 </div>
-<div class="city">
+<div class="city-<%= @theme  %>">
 	<h6>City: </h6><%= @company.city %>
 </div>
-<div class="state">
+<div class="state-<%= @theme  %>">
 	<h6>State: </h6><%= @company.state %>
 </div>
-<div class="zipcode">
+<div class="zipcode-<%= @theme  %>">
 	<h6>Zipcode: </h6><%= @company.zipcode %>
 </div>
-<div class="info">
+</div>
+<div class="info-<%= @theme  %>">
 <h2>Contact Us</h2>
 <div class="phone-<%= @theme  %>">
 	<%= @company.phone  %>
 </div>
-<div class="phone">
-	<h6>Phone: </h6><%= @company.phone %>
+<div class="fax-<%= @theme  %>">
+	<%= @company.fax %>
 </div>
-<div class="fax">
-	<h6>Fax: </h6><%= @company.fax %>
+<div class="email-<%= @theme  %>">
+	 <%= @company.email %>
 </div>
-<div class="email">
-	<h6>Email: </h6><%= @company.email %>
-</div>
-<div class="hours">
-	<h6>Hours: </h6><%= @company.hours %>
+<div class="hours-<%= @theme  %>">
+	<%= @company.hours %>
 </div>
 </div>
-<div class="info">
+<div class="info-<%= @theme  %>">
 <h2>Hours</h2>
 <div class="hours-<%= @theme  %>">
 	<%= @company.hours  %>
 </div>
 </div>
 </div>
+<% end %>
+
+<% if current_user.company.theme.theme_name == "Milano" %>
+<div class="container">
+<div class = "header-<%= @theme %>">
+<div class="company-<%= @theme  %>">
+	<h1><%= @company.company %></h1>
 </div>
 
+<div class="tagline-<%= @theme  %>">
+	<h3><%=@company.tagline  %></h3>
+</div>
+</div>
+<div class="grid-items">
+  <a href="javascript:void(0)" class="grid-item">
+    <i class="fa fa-phone-square fa-3x"></i>
+   <h1>Contact Us</h1>
+    <p><%=@company.phone%></p>
+     <p><%=@company.fax%></p>
+     <p><%=@company.email%></p>
+  </a>
+  <a href="javascript:void(0)" class="grid-item grid-item-big grid-item-image">
+ <i class="fa fa-heart fa-3x"></i>
+  <h1>About Us</h1>
+    <p><%=@company.about%></p>
+  </a>
+  <a href="javascript:void(0)" class="grid-item grid-item-big">
+  <i class="fa fa-map-marker fa-3x"></i>
+    <h1>Find Us</h1>
+    <p><%=@company.address1%></p>
+     <p><%=@company.address2%></p>
+     <p><%=@company.city%>, <%=@company.state%></p>
+      <p><%=@company.zipcode%></p>
+  </a>
+  <a href="javascript:void(0)" class="grid-item">
+    <i class="fa fa-clock-o fa-3x"></i>
+    <h1>Our Hours</h1>
+    <p><%= @company.hours %></p>
+  </a>
+  <a href="javascript:void(0)" class="grid-item">
+   <i class="fa fa-user fa-3x"></i>
+    <h1>Social</h1>
+    <p href="<%= @company.facebook  %>" title="">Facebook</p>
+    <p href="<%= @company.twitter  %>" title="">Twitter</p>
+     <p href="<%= @company.linkedin  %>" title="">Linkedin</p>
+      <p href="<%= @company.tumblr  %>" title="">Tumblr</p>
+  </a>
+  <a href="javascript:void(0)" class="grid-item grid-item-big grid-item-image">
+   <iframe width="600" height="150" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=<%= @company.address1 %> <%= @company.city %> <%= @company.state %> <%= @company.zipcode %>&output=embed"></iframe>
+  </a>
+</div>
+</div>
+<% end %>

@@ -1,50 +1,50 @@
-<h1>Company Index</h1>
-
-<h1>Edit your site here!</h1>
-<%= image_tag @company.logo.url(:medium) %>
-<%= form_for @company, :html => { :multipart => true } do |f| %>
-<div class="field">
-    <%= f.label 'Edit your logo' %><br />
-    <%= f.file_field :logo %>
-</div>
-<% end %>
-
-<div class="company">
-	<h6>Company: </h6><%= best_in_place @company, :company, type: :input %>
+<div class="container">
+<div class = "header-<%= @theme %>">
+<div class="company-<%= @theme  %>">
+	<p class="flash-notice">Psssst...You're in edit mode! click to change any field.</p>
+	<h1><%=best_in_place  @company, :company, type: :input %></h1>
 </div>
 
-<div class="tagline">
-	<h6>Tagline: </h6><%= best_in_place @company, :tagline, type: :input %>
+<div class="tagline-<%= @theme  %>">
+	<h3><%=best_in_place @company, :tagline, type: :input  %></h3>
 </div>
-
-<div class="about">
-	<h6>About us: </h6><%= best_in_place @company, :about, type: :textarea, :sanitize => :false%>
 </div>
-
-<div class="address1">
-	<h6>Address 1: </h6><%= best_in_place @company, :address1, type: :input %>
+<div class="grid-items">
+  <a href="javascript:void(0)" class="grid-item">
+    <i class="fa fa-phone-square fa-3x"></i>
+   <h1>Contact Us</h1>
+    <p><%=best_in_place @company, :phone, type: :input%></p>
+    <p><%= best_in_place @company, :fax, type: :input%></p>
+     <p><%= best_in_place @company, :email, type: :input%></p>
+  </a>
+  <a href="javascript:void(0)" class="grid-item grid-item-big grid-item-image">
+ <i class="fa fa-heart fa-3x"></i>
+  <h1>About Us</h1>
+    <p><%=best_in_place @company, :about, type: :input%></p>
+  </a>
+  <a href="javascript:void(0)" class="grid-item grid-item-big">
+  <i class="fa fa-map-marker fa-3x"></i>
+    <h1>Find Us</h1>
+    <p><%=best_in_place @company, :address1, type: :input%></p>
+     <p><%=best_in_place @company, :address2, type: :input%></p>
+     <p><%=best_in_place @company, :city, type: :input%>, <%=@company.state%></p>
+      <p><%=best_in_place @company, :zipcode, type: :input%></p>
+  </a>
+  <a href="javascript:void(0)" class="grid-item">
+    <i class="fa fa-clock-o fa-3x"></i>
+    <h1>Our Hours</h1>
+    <p><%= best_in_place @company, :hours, type: :input %></p>
+  </a>
+  <a href="javascript:void(0)" class="grid-item">
+   <i class="fa fa-user fa-3x"></i>
+    <h1>Social</h1>
+    <p href="<%= @company.facebook  %>" title="">Facebook</p>
+    <p href="<%= @company.twitter  %>" title="">Twitter</p>
+     <p href="<%= @company.linkedin  %>" title="">Linkedin</p>
+      <p href="<%= @company.tumblr  %>" title="">Tumblr</p>
+  </a>
+  <a href="javascript:void(0)" class="grid-item grid-item-big grid-item-image">
+   <iframe width="600" height="150" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=<%= @company.address1 %> <%= @company.city %> <%= @company.state %> <%= @company.zipcode %>&output=embed"></iframe>
+  </a>
 </div>
-<div class="address1">
-	<h6>Address 2: </h6><%= best_in_place @company, :address2, type: :input %>
-</div>
-<div class="city">
-	<h6>City: </h6><%= best_in_place @company, :city, type: :input %>
-</div>
-<div class="state">
-	<h6>State: </h6><%= best_in_place @company, :state, type: :input %>
-</div>
-<div class="zipcode">
-	<h6>Zipcode: </h6><%= best_in_place @company, :zipcode, type: :input %>
-</div>
-<div class="phone">
-	<h6>Phone: </h6><%= best_in_place @company, :phone, type: :input  %>
-</div>
-<div class="fax">
-	<h6>Fax: </h6><%= best_in_place @company, :fax, type: :input  %>
-</div>
-<div class="email">
-	<h6>Email: </h6><%= best_in_place @company, :email, type: :input %>
-</div>
-<div class="hours">
-	<h6>Hours: </h6><%= best_in_place @company, :hours, type: :input %>
 </div>
