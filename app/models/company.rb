@@ -7,17 +7,4 @@ class Company < ActiveRecord::Base
 	validates_attachment_content_type :logo, :content_type => /\Aimage/
 	validates_attachment_file_name :logo, :matches => [/png\Z/, /jpe?g\Z/]
 	do_not_validate_attachment_file_type :logo
-
-	validates :company, presence: true
-	validates :tagline, presence: true
-	validates :phone, phone_number: true
-	validates :address1, presence: true
-	validates :city, presence: true
-	validates :state, presence: true
-	validates :zipcode, presence: true
-	validates :email, presence: true
-	validates :hours, presence: true
-	validates :year_established, presence: true
-	# validates :seourl, presence: true
-
 end

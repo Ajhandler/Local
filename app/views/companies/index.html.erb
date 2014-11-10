@@ -9,20 +9,20 @@
 	<h3><%=best_in_place @company, :tagline, type: :input  %></h3>
 </div>
 </div>
-<div class="grid-items">
-  <a href="javascript:void(0)" class="grid-item">
+<div class="grid-items grid-colors">
+  <a href="javascript:void(0)" class="grid-item show">
     <i class="fa fa-phone-square fa-3x"></i>
    <h1>Contact Us</h1>
     <p><%=best_in_place @company, :phone, type: :input%></p>
     <p><%= best_in_place @company, :fax, type: :input%></p>
      <p><%= best_in_place @company, :email, type: :input%></p>
   </a>
-  <a href="javascript:void(0)" class="grid-item grid-item-big grid-item-image">
+  <a href="javascript:void(0)" class="grid-item grid-item-big grid-item-image show">
  <i class="fa fa-heart fa-3x"></i>
   <h1>About Us</h1>
-    <p><%=best_in_place @company, :about, type: :input%></p>
+    <p><%=best_in_place @company, :about, type: :textarea%></p>
   </a>
-  <a href="javascript:void(0)" class="grid-item grid-item-big">
+  <a href="javascript:void(0)" class="grid-item grid-item-big show">
   <i class="fa fa-map-marker fa-3x"></i>
     <h1>Find Us</h1>
     <p><%=best_in_place @company, :address1, type: :input%></p>
@@ -30,12 +30,12 @@
      <p><%=best_in_place @company, :city, type: :input%>, <%=@company.state%></p>
       <p><%=best_in_place @company, :zipcode, type: :input%></p>
   </a>
-  <a href="javascript:void(0)" class="grid-item">
+  <a href="javascript:void(0)" class="grid-item show">
     <i class="fa fa-clock-o fa-3x"></i>
     <h1>Our Hours</h1>
     <p><%= best_in_place @company, :hours, type: :input %></p>
   </a>
-  <a href="javascript:void(0)" class="grid-item">
+  <a href="javascript:void(0)" class="grid-item show">
    <i class="fa fa-user fa-3x"></i>
     <h1>Social</h1>
     <p href="<%= @company.facebook  %>" title="">Facebook</p>
@@ -43,7 +43,7 @@
      <p href="<%= @company.linkedin  %>" title="">Linkedin</p>
       <p href="<%= @company.tumblr  %>" title="">Tumblr</p>
   </a>
-  <a href="javascript:void(0)" class="grid-item grid-item-big grid-item-image">
+  <a href="javascript:void(0)" class="grid-item grid-item-big grid-item-image show">
    <iframe width="600" height="150" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=<%= @company.address1 %> <%= @company.city %> <%= @company.state %> <%= @company.zipcode %>&output=embed"></iframe>
   </a>
 </div>

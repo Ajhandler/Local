@@ -1,12 +1,7 @@
 class UsersController < ApplicationController
 
-<<<<<<< HEAD
-	def show
 
-=======
-	def index
-    @users = User.all
->>>>>>> dev
+	def show
 	end
 
   private
